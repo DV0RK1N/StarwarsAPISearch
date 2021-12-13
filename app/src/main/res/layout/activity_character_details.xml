@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="characterDetailsViewModel"
+            type="com.example.getthedataforduethealth.character.CharacterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CharacterDetailsActivity">
+
+        <ImageView
+            android:id="@+id/image_view_character_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Character Picture"
+            android:scaleType="fitCenter"
+            android:transitionName="characterTransition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/character_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_view_character_details"
+            app:layout_constraintEnd_toEndOf="@+id/image_view_character_details"
+            app:layout_constraintStart_toStartOf="@+id/image_view_character_details" />
+
+
+        <TextView
+            android:id="@+id/character_eye_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eye Color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/character_hair_color"
+            app:layout_constraintStart_toStartOf="@+id/character_hair_color"
+            app:layout_constraintTop_toBottomOf="@+id/character_hair_color" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_character_nick_name"
+            app:layout_constraintStart_toStartOf="@+id/text_view_character_nick_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_character_nick_name">
+
+            <TextView
+                android:id="@+id/character_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:textSize="20sp"
+
+                tools:layout_editor_absoluteX="122dp"
+                tools:layout_editor_absoluteY="259dp" />
+
+            <TextView
+                android:id="@+id/character_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mass"
+                android:textSize="20sp"
+
+                tools:layout_editor_absoluteX="203dp"
+                tools:layout_editor_absoluteY="269dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/character_hair_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hair Color"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/character_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/character_skin_color"
+            app:layout_constraintStart_toStartOf="@+id/character_skin_color"
+            app:layout_constraintTop_toBottomOf="@+id/character_skin_color" />
+
+        <TextView
+            android:id="@+id/text_view_character_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={characterDetailsViewModel.getCharacterNickname}"
+            android:textSize="20sp"
+            android:visibility="gone"
+
+            app:layout_constraintEnd_toEndOf="@+id/image_view_character_details"
+            app:layout_constraintStart_toStartOf="@+id/image_view_character_details"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_character_details" />
+
+        <TextView
+            android:id="@+id/character_skin_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skin Color"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/character_eye_color"
+            app:layout_constraintStart_toStartOf="@+id/character_eye_color"
+            app:layout_constraintTop_toBottomOf="@+id/character_eye_color" />
+
+        <TextView
+            android:id="@+id/character_birth_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birth Year"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/character_gender"
+            app:layout_constraintStart_toStartOf="@+id/character_gender"
+            app:layout_constraintTop_toBottomOf="@+id/character_gender" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButtonGiveNickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+
+            android:contentDescription="Character Nickname"
+            android:focusable="true"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <EditText
+            android:id="@+id/edit_text_change_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="Add Nickname and Press the Button Again"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/floatingActionButtonGiveNickname"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonGiveNickname"
+            app:layout_constraintTop_toTopOf="@+id/floatingActionButtonGiveNickname" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/purple_700"
+    android:elevation="4dp"
+    app:titleTextColor="@android:color/white"
+    tools:viewBindingIgnore="true">
+
+    <AutoCompleteTextView
+        android:id="@+id/toolbar_character_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:maxLines="1"
+        android:hint="Search Character"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        android:visibility="visible" />
+
+    <!--<AutoCompleteTextView
+        android:id="@+id/toolbar_edit_text_set_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:hint="Search Character"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="gone" />-->
+
+</androidx.appcompat.widget.Toolbar>
